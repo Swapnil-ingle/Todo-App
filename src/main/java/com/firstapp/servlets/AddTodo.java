@@ -23,6 +23,6 @@ public class AddTodo extends HttpServlet {
 			throws ServletException, IOException {
 		
 		TodoService.addTodo(req.getParameter("todo"), req.getParameter("category"));
-		resp.sendRedirect("/list-todo.do");
+		resp.sendRedirect("list-todo.do");
 	}
 }

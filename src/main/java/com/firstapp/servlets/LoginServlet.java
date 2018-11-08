@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
 		
 		if (LoginService.isUserValid(name, password)) {
 			req.getSession().setAttribute("name", name);
-			resp.sendRedirect("/list-todo.do");
+			resp.sendRedirect("list-todo.do");
 		} else {
 			reportError(req, resp);
 		}

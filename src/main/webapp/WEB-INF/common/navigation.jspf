@@ -3,12 +3,12 @@
 			<a href="/list-todo.do" class="navbar-brand">Swap's</a>
 			
 			<ul class="nav navbar-nav">
-				<li> <a href="/list-todo.do">Home</a></li>
-				<li> <a href="/add-todo.do">Add Todo</a></li>
+				<li> <a href="list-todo.do">Home</a></li>
+				<li> <a href="add-todo.do">Add Todo</a></li>
 				<li> <a href="https://www.github.com/Swapnil-ingle">My Github</a></li>
 			</ul>
 			
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/login.do">Login</a></li>
+				<li><a href="logout.do">Logout</a></li>
 			</ul>
 		</nav>

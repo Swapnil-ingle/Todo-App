@@ -17,6 +17,6 @@ public class DeleteTodo extends HttpServlet {
 			throws ServletException, IOException {
 		
 		TodoService.removeTodo(req.getParameter("todoId"));
-		resp.sendRedirect("/list-todo.do");
+		resp.sendRedirect("list-todo.do");
 	}
 }

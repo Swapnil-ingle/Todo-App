@@ -5,7 +5,7 @@
 			
 			<H2>What would you like to-do?</H2> 
 			
-			<form method="POST" action="/add-todo.do">
+			<form method="POST" action="add-todo.do">
 				<fieldset class="form-group">
 					<label>Category:</label> <input name="category" type="text" class="form-control"/> </BR>
 				</fieldset>	

@@ -14,7 +14,7 @@
 					<th>Action</th>
 				</thead>
 				<tbody>
-					<form action="/delete-todo.do" method="POST">
+					<form action="delete-todo.do" method="POST">
 						<c:forEach items="${todos}" var="todo">
 							<tr>
 								<td>${todo.name}</td>
@@ -29,7 +29,7 @@
 			<p>
 				<font color="red">${error}</font>
 			</p>
-			<a class="btn btn-success" href="/add-todo.do">Add new todo</a>
+			<a class="btn btn-success" href="add-todo.do">Add new todo</a>
 		</div>
 		
 <%@ include file="../common/footer.jspf" %>
