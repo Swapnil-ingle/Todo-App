@@ -1,0 +1,9 @@
+		<footer class="footer">
+			<p class="text-center"><Strong>App by:</Strong> Swapnil Ingle</p>
+			<p class="text-center"><Strong>Email:</Strong> dr.swapnilingle@gmail.com</p>
+		</footer>
+	
+	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	</body>
+</html>
