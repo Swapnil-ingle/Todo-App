@@ -5,16 +5,18 @@ public class Todo {
 	
 	private String category;
 	
-	private static int incrementalId;
-	
 	private int id;
 	
-	public Todo(String name, String category) {
+	public Todo(String name, String category, int id) {
 		super();
 		this.name = name;
 		this.category = category;
-		incrementalId++;
-		this.id = incrementalId;
+		this.id = id;
+	}
+	
+	public Todo(String name, String category) {
+		this.name = name;
+		this.category = category;
 	}
 	
 	public String getName() {

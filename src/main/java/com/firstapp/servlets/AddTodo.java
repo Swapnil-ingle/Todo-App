@@ -1,6 +1,7 @@
 package com.firstapp.servlets;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,7 +23,11 @@ public class AddTodo extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
 		
-		TodoService.addTodo(req.getParameter("todo"), req.getParameter("category"));
+		try {
+			TodoService.addTodo(req.getParameter("todo"), req.getParameter("category"), req.getSession());
+		} catch (SQLException e) {
+			e.getMessage();
+		}
 		resp.sendRedirect("list-todo.do");
 	}
 }

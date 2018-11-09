@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.firstapp.datasource.DbConnection;
+import com.firstapp.datasource.DbConnectionManager;
 import com.firstapp.domain.User;
 import com.firstapp.services.LoginService;
 
@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
 	
 	private boolean userIsValid(User user, HttpServletRequest req) {
 		try {
-			return LoginService.isUserValid(user, (DbConnection) req.getSession().getAttribute("dbConnection"));
+			return LoginService.isUserValid(user, (DbConnectionManager) req.getSession().getAttribute("dbConnection"));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

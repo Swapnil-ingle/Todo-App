@@ -13,16 +13,17 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-import com.firstapp.datasource.DbConnection;
+import com.firstapp.datasource.DbConnectionManager;
 import com.firstapp.services.DbServices;
 
 @WebFilter(urlPatterns = "*.do")
 public class UserLogin implements Filter {
-	private DbConnection dbConn;
+	private DbConnectionManager dbConn;
 	
 	@Override
 	public void destroy() {
 		try {
+			System.out.println("destroyed");
 			this.dbConn.getConn().close();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -50,7 +51,8 @@ public class UserLogin implements Filter {
 	@Override
 	public void init(FilterConfig chain) throws ServletException {
 		if (dbConn == null) {
-			dbConn = new DbConnection();
+			System.out.println("initialized");
+			dbConn = new DbConnectionManager();
 		} else {
 			return;
 		}

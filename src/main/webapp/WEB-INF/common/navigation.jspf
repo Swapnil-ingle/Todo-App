@@ -1,6 +1,6 @@
 <body>
 		<nav class="navbar navbar-default">
-			<a href="/list-todo.do" class="navbar-brand">Swap's</a>
+			<a href="/list-todo.do" class="navbar-brand">Swap</a>
 			
 			<ul class="nav navbar-nav">
 				<li> <a href="list-todo.do">Home</a></li>

@@ -3,7 +3,8 @@
 
 		<div class="container">
 			
-			<H2>Enter your details:</H2> 
+			<H2>To-do?</H2> 
+			<H3>Registration:</H3>
 			
 			<form method="POST" action="register-user.do">
 				<fieldset class="form-group">

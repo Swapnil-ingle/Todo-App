@@ -7,22 +7,23 @@ import java.sql.SQLException;
 
 import org.mindrot.jbcrypt.BCrypt;
 
-import com.firstapp.datasource.DbConnection;
+import com.firstapp.datasource.DbConnectionManager;
 import com.firstapp.domain.User;
 
 public class LoginService {
-	public static boolean isUserValid(User user, DbConnection dbConnection) throws SQLException {
+	public static boolean isUserValid(User user, DbConnectionManager dbConnection) throws SQLException {
 		Connection conn = dbConnection.getConn();
 		ResultSet rs = null;
 		PreparedStatement stmt = null;
 		
 		try {
-			stmt = conn.prepareStatement("SELECT Password FROM USERS WHERE name = ?");
+			stmt = conn.prepareStatement("SELECT Identifier, Password FROM USERS WHERE name = ?");
 			stmt.setString(1, user.getName());
 			rs = stmt.executeQuery();
 			
 			if (rs.next()) {
 				if (BCrypt.checkpw(user.getPassword(), rs.getString("Password"))) {
+					user.setId(Integer.parseInt(rs.getString("Identifier")));
 					return true;
 				}
 			} 
@@ -31,13 +32,14 @@ public class LoginService {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			stmt.close();
+			if (stmt != null) {stmt.close();};
+			if (rs != null) {rs.close();};
 		}
 		
 		return false;
 	}
 	
-	public static void registerNewUser(String username, String password, DbConnection dbConnection) throws SQLException {
+	public static void registerNewUser(String username, String password, DbConnectionManager dbConnection) throws SQLException {
 		Connection conn = dbConnection.getConn();
 		PreparedStatement stmt = null;
 		
@@ -50,7 +52,7 @@ public class LoginService {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			stmt.close();
+			if (stmt != null) {stmt.close();};
 		}
 	}
 }

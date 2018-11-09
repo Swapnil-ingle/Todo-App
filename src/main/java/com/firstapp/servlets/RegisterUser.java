@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.firstapp.datasource.DbConnection;
+import com.firstapp.datasource.DbConnectionManager;
 import com.firstapp.services.DbServices;
 import com.firstapp.services.LoginService;
 import com.firstapp.services.TodoService;
@@ -26,7 +26,7 @@ public class RegisterUser extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 			LoginService.registerNewUser(req.getParameter("name"), req.getParameter("password"), 
-					(DbConnection) req.getSession().getAttribute("dbConnection"));
+					(DbConnectionManager) req.getSession().getAttribute("dbConnection"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
