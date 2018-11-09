@@ -26,8 +26,13 @@
 			<fieldset class="form-group">
 				<label>Password:</label> <input class="form-control" type="password" name="password">  
 			</fieldset>
-			<input class="btn btn-success" type="submit" value="Login"/>
+			<fieldset class="form-group text-center">
+				<input class="btn btn-success" type="submit" value="Login"/>
+			</fieldset>
 		</form>
+			<fieldset class="form-group text-center">
+				<a href="register-user.do" class="btn btn-info">Register New User!</a>
+			</fieldset>
 	</div>
 	
 <%@ include file="../common/footer.jspf" %>

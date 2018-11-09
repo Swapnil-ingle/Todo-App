@@ -28,6 +28,16 @@
 			<artifactId>jquery</artifactId>
 			<version>1.9.1</version>
 		</dependency>
+		<dependency>
+		    <groupId>de.svenkubiak</groupId>
+		    <artifactId>jBCrypt</artifactId>
+		    <version>0.4.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.13</version>
+		</dependency>
 	</dependencies>
 
 	<build>

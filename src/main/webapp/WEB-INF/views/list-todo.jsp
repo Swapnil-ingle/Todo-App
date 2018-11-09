@@ -2,7 +2,7 @@
 <%@ include file="../common/navigation.jspf" %>
 		
 		<div class="container">
-			<H1>Hi, ${name}!</H1>
+			<H1>Hi, ${user.name}!</H1>
 			
 			Your Todo's are:
 			
