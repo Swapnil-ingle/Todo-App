@@ -10,8 +10,9 @@ Technologies used:
 3. JSP
 4. Bootstrap
 5. HTML5
-6. CSS.
+6. CSS
+7. SQL
 
 This is a basic application developed using the Model-View-Controller design pattern with the intention of learning and getting started with basic JSP. 
 
-The application is based on a tutorial with added and improved fuctionality and made to work end-to-end.
+The application is based on a tutorial with added and improved fuctionality, design and made to work end-to-end.
